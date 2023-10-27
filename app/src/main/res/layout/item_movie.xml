@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="8dp"
+    card_view:cardBackgroundColor="?android:attr/windowBackground"
+    card_view:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/item_image"
+            android:layout_width="186dp"
+            android:layout_height="186dp"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/image_loading" />
+
+        <TextView
+            android:id="@+id/movie_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@id/item_image"
+            android:textSize="20sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textStyle="bold"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@id/item_image"
+            tools:text="@string/movieTitle" />
+
+        <ImageView
+            android:id="@+id/star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_star_24"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp"
+            card_view:layout_constraintTop_toBottomOf="@id/movie_title"
+            card_view:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/movieVoteAverage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/movieVoteAverage"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="8dp"
+            android:textStyle="bold"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintStart_toEndOf="@id/star"
+            card_view:layout_constraintTop_toBottomOf="@id/movie_title" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

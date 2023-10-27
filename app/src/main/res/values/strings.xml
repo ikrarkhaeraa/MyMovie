@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">MyMovie</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="accountName">Ikrar Khaera</string>
+    <string name="login">Login</string>
+    <string name="email">Enter your Email here</string>
+    <string name="exampleEmail">Example: ikrar@gmail.com</string>
+    <string name="password">Enter your Password here</string>
+    <string name="examplePassword">Example: 12345678</string>
+    <string name="emailNotValid">Email is not valid</string>
+    <string name="passwordNotValid">Password is not valid</string>
+    <string name="movieTitle">Movie Title</string>
+    <string name="movieVoteAverage">8.6</string>
+    <string name="errorTitle">Empty</string>
+    <string name="errorTitleConnection">Connection</string>
+    <string name="errorTitle500">500</string>
+    <string name="errorDesc">Your requested data is unavailable</string>
+    <string name="errorDescConnection">Your connection is unavailable</string>
+    <string name="errorDesc500">Internal Server Error</string>
+    <string name="resetButtonError">Reset</string>
+    <string name="refreshButtonError">Refresh</string>
+
 </resources>
