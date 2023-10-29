@@ -50,7 +50,7 @@ data class Movies(
     val overview: String,
 
     @field:SerializedName("popularity")
-    val popularity: Double,
+    val popularity: Float,
 
     @field:SerializedName("poster_path")
     val posterPath: String,
@@ -65,7 +65,7 @@ data class Movies(
     val video: Boolean,
 
     @field:SerializedName("vote_average")
-    val voteAverage: Double,
+    val voteAverage: Float,
 
     @field:SerializedName("vote_count")
     val voteCount: Int,

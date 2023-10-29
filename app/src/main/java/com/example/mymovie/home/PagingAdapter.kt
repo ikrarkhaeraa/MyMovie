@@ -60,7 +60,8 @@ class PagingAdapter(private val onMoviesClick: (Movies) -> Unit) :
                     .placeholder(R.drawable.image_loading)
                     .into(binding.itemImage)
                 binding.movieTitle.text = movieData.title
-                binding.movieVoteAverage.text = movieData.voteAverage.toString()
+                val formattedNumber = String.format("%.1f", movieData.voteAverage)
+                binding.movieVoteAverage.text = formattedNumber
             }
         }
     }

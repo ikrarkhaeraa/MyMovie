@@ -9,9 +9,14 @@ import com.example.core.paging.PagingSource
 import com.example.core.retrofit.ApiService
 import com.example.core.retrofit.response.Movies
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class Repository @Inject constructor(private val localDb : LocalDatabase, private val apiService: ApiService){
+
+    fun getMovieDetail(auth: String, id: Int) = flow {
+        emit(apiService.getMovieDetail(auth, id))
+    }
 
     fun getMovieList(): Flow<PagingData<Movies>> {
         return Pager(

@@ -20,5 +20,19 @@
     <string name="errorDesc500">Internal Server Error</string>
     <string name="resetButtonError">Reset</string>
     <string name="refreshButtonError">Refresh</string>
-
+    <string name="movieTagline">Movie Tagline</string>
+    <string name="movieOverviewTitle">Movie Overview</string>
+    <string name="movieOverview">Movie Overview</string>
+    <string name="releaseDateTitle">Release Date :</string>
+    <string name="releaseDate">10–02–01</string>
+    <string name="adultTitle">Adult :</string>
+    <string name="adult">No</string>
+    <string name="statusTitle">Status :</string>
+    <string name="status">Released</string>
+    <string name="videoTitle">Video :</string>
+    <string name="video">No</string>
+    <string name="moreInformationTitle">More Information</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="movieDetail">Movie Detail</string>
 </resources>

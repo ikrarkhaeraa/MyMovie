@@ -33,9 +33,9 @@
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="8dp"
             android:layout_toEndOf="@id/item_image"
-            android:textSize="20sp"
-            android:maxLines="2"
             android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="20sp"
             android:textStyle="bold"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
@@ -46,24 +46,24 @@
             android:id="@+id/star"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_star_24"
             android:layout_marginHorizontal="8dp"
             android:layout_marginVertical="8dp"
-            card_view:layout_constraintTop_toBottomOf="@id/movie_title"
-            card_view:layout_constraintStart_toStartOf="parent"/>
+            android:src="@drawable/baseline_star_24"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/movie_title" />
 
         <TextView
             android:id="@+id/movieVoteAverage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:text="@string/movieVoteAverage"
             android:textSize="15sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="8dp"
             android:textStyle="bold"
-            card_view:layout_constraintBottom_toBottomOf="parent"
-            card_view:layout_constraintStart_toEndOf="@id/star"
-            card_view:layout_constraintTop_toBottomOf="@id/movie_title" />
+            card_view:layout_constraintBottom_toBottomOf="@+id/star"
+            card_view:layout_constraintStart_toEndOf="@+id/star"
+            card_view:layout_constraintTop_toTopOf="@+id/star" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
