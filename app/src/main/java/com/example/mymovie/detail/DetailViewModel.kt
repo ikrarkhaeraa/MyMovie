@@ -19,6 +19,7 @@ class DetailViewModel @Inject constructor(private val localDb: LocalDatabase, pr
 
     private val _movieDetail = MutableStateFlow<SealedClass<DetailMovieResponse>>(SealedClass.Init)
     val movieDetail = _movieDetail
+
     fun getDetailProductData(id: Int) = viewModelScope.launch {
         val token = localDb.getAccessToken().first()
         val auth = "Bearer $token"

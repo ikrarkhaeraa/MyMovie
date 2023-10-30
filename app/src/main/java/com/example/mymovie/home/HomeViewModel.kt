@@ -15,7 +15,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(private val repo: Repository): ViewModel() {
 
-    val sendFilter: () -> Flow<PagingData<Movies>> = {
+    val getMovieList: () -> Flow<PagingData<Movies>> = {
         Log.d("cekViewModel", "keHitViewModelnya")
         repo.getMovieList().cachedIn(viewModelScope)
     }

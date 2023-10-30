@@ -92,7 +92,12 @@ class DetailFragment : Fragment() {
         val image = "https://image.tmdb.org/t/p/original${data.posterPath}"
         Glide.with(requireContext()).load(image).centerCrop().into(binding.itemImage)
         binding.movieTitle.text = data.title
-        binding.movieTagline.text = data.tagline
+
+        if (data.tagline.isNotEmpty()) {
+            binding.movieTagline.text = data.tagline
+        } else {
+            binding.movieTagline.visibility = GONE
+        }
 
         val formattedNumber = String.format("%.1f", data.voteAverage)
         binding.movieAverage.text = formattedNumber

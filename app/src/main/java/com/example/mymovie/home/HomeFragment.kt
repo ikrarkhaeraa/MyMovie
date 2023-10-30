@@ -1,6 +1,7 @@
 package com.example.mymovie.home
 
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -119,7 +120,7 @@ class HomeFragment : Fragment() {
     }
 
     private suspend fun sendAndGetData() {
-        model.sendFilter().collectLatest {
+        model.getMovieList().collectLatest {
             listMovies = it
             pagingAdapter.submitData(viewLifecycleOwner.lifecycle, listMovies)
         }
@@ -221,4 +222,5 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
+
 }
