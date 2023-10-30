@@ -18,6 +18,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.mymovie.R
 import com.example.mymovie.databinding.FragmentHomeBinding
 import com.example.mymovie.databinding.FragmentLoginBinding
+import com.example.mymovie.detail.DetailFragmentArgs
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
@@ -35,6 +36,7 @@ class LoginFragment : Fragment() {
     private lateinit var password: String
     private var isEmailValid = false
     private var isPasswordValid = false
+    private var userName = ""
 
     @OptIn(DelicateCoroutinesApi::class)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -48,6 +50,7 @@ class LoginFragment : Fragment() {
             binding.buttonMasuk.visibility = INVISIBLE
             showLoading(true)
             model.setUserLoginState()
+            model.setUserLoginState(userName)
             GlobalScope.launch(Dispatchers.Main) {
                 delay(1000)
                 findNavController().navigate(R.id.action_loginFragment_to_HomeFragment)
@@ -95,6 +98,8 @@ class LoginFragment : Fragment() {
             binding.textFieldEmail.error = null
             isEmailValid = true
         }
+
+        userName = email.substringBefore('@')
     }
 
     private fun validatePassword() {

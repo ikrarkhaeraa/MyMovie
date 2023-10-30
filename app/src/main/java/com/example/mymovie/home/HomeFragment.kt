@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.GridLayoutManager
@@ -40,6 +41,7 @@ class HomeFragment : Fragment() {
         )
     }
     private lateinit var listMovies: PagingData<Movies>
+    private var username: String = ""
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -49,6 +51,11 @@ class HomeFragment : Fragment() {
             if (!userLoginState) {
                 findNavController().navigate(R.id.main_to_login)
             }
+        }
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            username = model.getUsername().first()
+            binding.topAppBar.title = username
         }
 
         binding.topAppBar.setOnMenuItemClickListener {

@@ -9,6 +9,7 @@ import com.example.core.paging.PagingSource
 import com.example.core.retrofit.ApiService
 import com.example.core.retrofit.response.Movies
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
@@ -36,6 +37,14 @@ class Repository @Inject constructor(private val localDb : LocalDatabase, privat
 
     fun getUserLoginState(): Flow<Boolean> {
         return localDb.getUserLoginState()
+    }
+
+    suspend fun setUsername(userName: String) {
+        localDb.setUsername(userName)
+    }
+
+    fun getUsername(): Flow<String> {
+        return localDb.getUsername()
     }
 
     suspend fun userLogout() {

@@ -17,5 +17,10 @@ class LoginViewModel @Inject constructor(private val repo: Repository): ViewMode
         }
     }
 
+    fun setUserLoginState(userName: String) {
+        viewModelScope.launch {
+            repo.setUsername(userName)
+        }
+    }
 
 }

@@ -20,6 +20,10 @@ class HomeViewModel @Inject constructor(private val repo: Repository): ViewModel
         repo.getMovieList().cachedIn(viewModelScope)
     }
 
+    fun getUsername(): Flow<String> {
+        return repo.getUsername()
+    }
+
     fun getUserLoginState(): Flow<Boolean> {
         return repo.getUserLoginState()
     }

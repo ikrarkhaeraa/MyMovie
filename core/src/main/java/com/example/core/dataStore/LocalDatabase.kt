@@ -15,6 +15,7 @@ class LocalDatabase @Inject constructor(private val database: DataStore<Preferen
     companion object {
         private val LOGINSTATE_KEY = booleanPreferencesKey("loginState")
         private val ACCESSTOKEN_KEY = stringPreferencesKey("accessToken")
+        private val USERNAME_KEY = stringPreferencesKey("userName")
     }
 
     fun getAccessToken(): Flow<String> {
@@ -32,6 +33,18 @@ class LocalDatabase @Inject constructor(private val database: DataStore<Preferen
     suspend fun setUserLoginState() {
         database.edit { preferences ->
             preferences[LOGINSTATE_KEY] = true
+        }
+    }
+
+    fun getUsername(): Flow<String> {
+        return database.data.map { preferences ->
+            preferences[USERNAME_KEY] ?: ""
+        }
+    }
+
+    suspend fun setUsername(userName: String) {
+        database.edit { preferences ->
+            preferences[USERNAME_KEY] = userName
         }
     }
 
